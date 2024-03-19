@@ -2,9 +2,16 @@
 import telebot
 from googletrans import Translator
 
+#import dotenv
+from environs import Env
+
+env = Env()
+env.read_env()
+
+BOT_TOKEN = env.str("API_TOKEN")
 
 
-bot = telebot.TeleBot("7008889896:AAGrkXUSKXHrKK86lFfW-KK6QMFVZz_v2xQ")
+bot = telebot.TeleBot(BOT_TOKEN)
 
 translator = Translator()
 
